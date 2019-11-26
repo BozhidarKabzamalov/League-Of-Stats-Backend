@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Summoner;
+use App\Match;
 
 class RiotController extends Controller
 {
@@ -147,11 +148,27 @@ class RiotController extends Controller
         $apiKey = env("RIOT_API_KEY");
         $region = env("EUW");
 
-        $getMatch = file_get_contents($region . "/lol/match/v4/matches/" . $matchId . "?api_key=" . $apiKey);
-        $match = json_decode($getMatch);
+        $matchExists = Match::where('match_id', $matchId)->first();
+
+        //$getMatchTimeline = file_get_contents($region . "/lol/match/v4/timelines/by-match/" . $matchId . "?api_key=" . $apiKey);
+        //$matchTimeline = json_decode($getMatchTimeline);
+
+        if ($matchExists === null) {
+            $getMatchInfo = file_get_contents($region . "/lol/match/v4/matches/" . $matchId . "?api_key=" . $apiKey);
+            $matchInfo = json_decode($getMatchInfo);
+
+            $match = new Match();
+            $match->match_id = $matchId;
+            $match->match_info = json_encode($matchInfo);
+
+            $match->save();
+        } else {
+            $matchInfo = json_decode($matchExists->match_info);
+        }
 
         return response()->json([
-            'match' => $match
+            'match' => $matchInfo,
+            //'matchTimeline' => $matchTimeline
         ], 201);
     }
 

@@ -1,13 +1,13 @@
-[2019-08-28 01:43:57] local.ERROR: file_get_contents(https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/TheOnyxKing?api_key=RGAPI-ad3b8cd5-cee1-4f6c-b8cf-265de72d0cc2): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
- {"exception":"[object] (ErrorException(code: 0): file_get_contents(https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/TheOnyxKing?api_key=RGAPI-ad3b8cd5-cee1-4f6c-b8cf-265de72d0cc2): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
- at C:\\MAMP\\htdocs\\League Of Legends Backend\\app\\Http\\Controllers\\RiotController.php:87)
+[2019-10-04 16:14:00] local.ERROR: file_get_contents(https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/TheOnyxKing?api_key=RGAPI-eee84ff9-26d7-4cf8-a175-c49ee9e81944): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+ {"exception":"[object] (ErrorException(code: 0): file_get_contents(https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/TheOnyxKing?api_key=RGAPI-eee84ff9-26d7-4cf8-a175-c49ee9e81944): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+ at C:\\MAMP\\htdocs\\League Of Legends Backend\\app\\Http\\Controllers\\RiotController.php:153)
 [stacktrace]
-#0 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'file_get_conten...', 'C:\\\\MAMP\\\\htdocs\\\\...', 87, Array)
-#1 C:\\MAMP\\htdocs\\League Of Legends Backend\\app\\Http\\Controllers\\RiotController.php(87): file_get_contents('https://euw1.ap...')
-#2 [internal function]: App\\Http\\Controllers\\RiotController->updateSummoner('TheOnyxKing')
+#0 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'file_get_conten...', 'C:\\\\MAMP\\\\htdocs\\\\...', 153, Array)
+#1 C:\\MAMP\\htdocs\\League Of Legends Backend\\app\\Http\\Controllers\\RiotController.php(153): file_get_contents('https://euw1.ap...')
+#2 [internal function]: App\\Http\\Controllers\\RiotController->getMatch('TheOnyxKing', '4132479262')
 #3 C:\\MAMP\\htdocs\\League Of Legends Backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array(Array, Array)
-#4 C:\\MAMP\\htdocs\\League Of Legends Backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('updateSummoner', Array)
-#5 C:\\MAMP\\htdocs\\League Of Legends Backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\RiotController), 'updateSummoner')
+#4 C:\\MAMP\\htdocs\\League Of Legends Backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('getMatch', Array)
+#5 C:\\MAMP\\htdocs\\League Of Legends Backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\RiotController), 'getMatch')
 #6 C:\\MAMP\\htdocs\\League Of Legends Backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
 #7 C:\\MAMP\\htdocs\\League Of Legends Backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(680): Illuminate\\Routing\\Route->run()
 #8 C:\\MAMP\\htdocs\\League Of Legends Backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(30): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))

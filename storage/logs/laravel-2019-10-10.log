@@ -1,10 +1,10 @@
-[2019-08-16 14:18:20] local.ERROR: file_get_contents(https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/asdasdasdhg?api_key=RGAPI-3a9f5e63-a818-49f5-8f20-a007eab793c8): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
- {"exception":"[object] (ErrorException(code: 0): file_get_contents(https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/asdasdasdhg?api_key=RGAPI-3a9f5e63-a818-49f5-8f20-a007eab793c8): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
- at C:\\MAMP\\htdocs\\League Of Legends Backend\\app\\Http\\Controllers\\RiotController.php:18)
+[2019-10-10 22:17:41] local.ERROR: file_get_contents(https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/BIGNOBROB?api_key=RGAPI-365c1d3b-6cfc-4cf3-8617-70b42b588e7b): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+ {"exception":"[object] (ErrorException(code: 0): file_get_contents(https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/BIGNOBROB?api_key=RGAPI-365c1d3b-6cfc-4cf3-8617-70b42b588e7b): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+ at C:\\MAMP\\htdocs\\League Of Legends Backend\\app\\Http\\Controllers\\RiotController.php:19)
 [stacktrace]
-#0 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'file_get_conten...', 'C:\\\\MAMP\\\\htdocs\\\\...', 18, Array)
-#1 C:\\MAMP\\htdocs\\League Of Legends Backend\\app\\Http\\Controllers\\RiotController.php(18): file_get_contents('https://euw1.ap...')
-#2 [internal function]: App\\Http\\Controllers\\RiotController->getSummoner('asdasdasdhg')
+#0 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'file_get_conten...', 'C:\\\\MAMP\\\\htdocs\\\\...', 19, Array)
+#1 C:\\MAMP\\htdocs\\League Of Legends Backend\\app\\Http\\Controllers\\RiotController.php(19): file_get_contents('https://euw1.ap...')
+#2 [internal function]: App\\Http\\Controllers\\RiotController->getSummoner('BIGNOBROB')
 #3 C:\\MAMP\\htdocs\\League Of Legends Backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array(Array, Array)
 #4 C:\\MAMP\\htdocs\\League Of Legends Backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('getSummoner', Array)
 #5 C:\\MAMP\\htdocs\\League Of Legends Backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\RiotController), 'getSummoner')

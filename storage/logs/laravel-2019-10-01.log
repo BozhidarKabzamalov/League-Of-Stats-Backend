@@ -1,13 +1,13 @@
-[2019-08-20 16:33:56] local.ERROR: file_get_contents(https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/TheOnyxKing?api_key=RGAPI-52063352-688c-46fa-9968-3a6635e127dd): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
- {"exception":"[object] (ErrorException(code: 0): file_get_contents(https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/TheOnyxKing?api_key=RGAPI-52063352-688c-46fa-9968-3a6635e127dd): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
- at C:\\MAMP\\htdocs\\League Of Legends Backend\\app\\Http\\Controllers\\RiotController.php:87)
+[2019-10-01 16:31:07] local.ERROR: file_get_contents(https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/PlsBanMyNasus?api_key=RGAPI-362888d5-e8fc-4395-a3bd-3bee56464878): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ {"exception":"[object] (ErrorException(code: 0): file_get_contents(https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/PlsBanMyNasus?api_key=RGAPI-362888d5-e8fc-4395-a3bd-3bee56464878): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ at C:\\MAMP\\htdocs\\League Of Legends Backend\\app\\Http\\Controllers\\RiotController.php:19)
 [stacktrace]
-#0 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'file_get_conten...', 'C:\\\\MAMP\\\\htdocs\\\\...', 87, Array)
-#1 C:\\MAMP\\htdocs\\League Of Legends Backend\\app\\Http\\Controllers\\RiotController.php(87): file_get_contents('https://euw1.ap...')
-#2 [internal function]: App\\Http\\Controllers\\RiotController->updateSummoner('TheOnyxKing')
+#0 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'file_get_conten...', 'C:\\\\MAMP\\\\htdocs\\\\...', 19, Array)
+#1 C:\\MAMP\\htdocs\\League Of Legends Backend\\app\\Http\\Controllers\\RiotController.php(19): file_get_contents('https://euw1.ap...')
+#2 [internal function]: App\\Http\\Controllers\\RiotController->getSummoner('PlsBanMyNasus')
 #3 C:\\MAMP\\htdocs\\League Of Legends Backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array(Array, Array)
-#4 C:\\MAMP\\htdocs\\League Of Legends Backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('updateSummoner', Array)
-#5 C:\\MAMP\\htdocs\\League Of Legends Backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\RiotController), 'updateSummoner')
+#4 C:\\MAMP\\htdocs\\League Of Legends Backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('getSummoner', Array)
+#5 C:\\MAMP\\htdocs\\League Of Legends Backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\RiotController), 'getSummoner')
 #6 C:\\MAMP\\htdocs\\League Of Legends Backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
 #7 C:\\MAMP\\htdocs\\League Of Legends Backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(680): Illuminate\\Routing\\Route->run()
 #8 C:\\MAMP\\htdocs\\League Of Legends Backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(30): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
@@ -48,16 +48,16 @@
 #43 C:\\MAMP\\htdocs\\League Of Legends Backend\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #44 {main}
 "} 
-[2019-08-20 16:34:00] local.ERROR: file_get_contents(https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/TheOnyxKing?api_key=RGAPI-52063352-688c-46fa-9968-3a6635e127dd): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
- {"exception":"[object] (ErrorException(code: 0): file_get_contents(https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/TheOnyxKing?api_key=RGAPI-52063352-688c-46fa-9968-3a6635e127dd): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
- at C:\\MAMP\\htdocs\\League Of Legends Backend\\app\\Http\\Controllers\\RiotController.php:87)
+[2019-10-01 16:31:45] local.ERROR: file_get_contents(https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/PlsBanMyNasus?api_key=RGAPI-362888d5-e8fc-4395-a3bd-3bee56464878): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ {"exception":"[object] (ErrorException(code: 0): file_get_contents(https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/PlsBanMyNasus?api_key=RGAPI-362888d5-e8fc-4395-a3bd-3bee56464878): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ at C:\\MAMP\\htdocs\\League Of Legends Backend\\app\\Http\\Controllers\\RiotController.php:19)
 [stacktrace]
-#0 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'file_get_conten...', 'C:\\\\MAMP\\\\htdocs\\\\...', 87, Array)
-#1 C:\\MAMP\\htdocs\\League Of Legends Backend\\app\\Http\\Controllers\\RiotController.php(87): file_get_contents('https://euw1.ap...')
-#2 [internal function]: App\\Http\\Controllers\\RiotController->updateSummoner('TheOnyxKing')
+#0 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'file_get_conten...', 'C:\\\\MAMP\\\\htdocs\\\\...', 19, Array)
+#1 C:\\MAMP\\htdocs\\League Of Legends Backend\\app\\Http\\Controllers\\RiotController.php(19): file_get_contents('https://euw1.ap...')
+#2 [internal function]: App\\Http\\Controllers\\RiotController->getSummoner('PlsBanMyNasus')
 #3 C:\\MAMP\\htdocs\\League Of Legends Backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array(Array, Array)
-#4 C:\\MAMP\\htdocs\\League Of Legends Backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('updateSummoner', Array)
-#5 C:\\MAMP\\htdocs\\League Of Legends Backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\RiotController), 'updateSummoner')
+#4 C:\\MAMP\\htdocs\\League Of Legends Backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('getSummoner', Array)
+#5 C:\\MAMP\\htdocs\\League Of Legends Backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\RiotController), 'getSummoner')
 #6 C:\\MAMP\\htdocs\\League Of Legends Backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
 #7 C:\\MAMP\\htdocs\\League Of Legends Backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(680): Illuminate\\Routing\\Route->run()
 #8 C:\\MAMP\\htdocs\\League Of Legends Backend\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(30): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
