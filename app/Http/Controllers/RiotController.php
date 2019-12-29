@@ -22,7 +22,7 @@ class RiotController extends Controller
             $getSummonerLeague = file_get_contents($region . "/lol/league/v4/entries/by-summoner/" . $summonerInfo->id . "?api_key=" . $apiKey);
             $summonerLeague = json_decode($getSummonerLeague);
 
-            $getSummonerMatches = file_get_contents($region . "/lol/match/v4/matchlists/by-account/" . $summonerInfo->accountId . "?beginIndex=0&endIndex=10&api_key=" . $apiKey);
+            $getSummonerMatches = file_get_contents($region . "/lol/match/v4/matchlists/by-account/" . $summonerInfo->accountId . "?endIndex=10&beginIndex=0&api_key=" . $apiKey);
             $summonerMatches = json_decode($getSummonerMatches);
 
             $matchesGET = [];
