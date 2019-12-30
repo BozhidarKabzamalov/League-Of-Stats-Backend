@@ -8,27 +8,27 @@ use App\Match;
 
 class RiotController extends Controller
 {
-    public function getSummoner($summonerName){
+    public function getSummoner($region, $summonerName){
 
         $summoner = Summoner::where('summoner_name', $summonerName)->first();
 
         if ($summoner === null) {
             $apiKey = env("RIOT_API_KEY");
-            $region = env("EUW");
+            $regionUrl = env($region);
 
-            $getSummonerInfo = file_get_contents($region . "/lol/summoner/v4/summoners/by-name/" . $summonerName . "?api_key=" . $apiKey);
+            $getSummonerInfo = file_get_contents($regionUrl . "/lol/summoner/v4/summoners/by-name/" . $summonerName . "?api_key=" . $apiKey);
             $summonerInfo = json_decode($getSummonerInfo);
 
-            $getSummonerLeague = file_get_contents($region . "/lol/league/v4/entries/by-summoner/" . $summonerInfo->id . "?api_key=" . $apiKey);
+            $getSummonerLeague = file_get_contents($regionUrl . "/lol/league/v4/entries/by-summoner/" . $summonerInfo->id . "?api_key=" . $apiKey);
             $summonerLeague = json_decode($getSummonerLeague);
 
-            $getSummonerMatches = file_get_contents($region . "/lol/match/v4/matchlists/by-account/" . $summonerInfo->accountId . "?endIndex=10&beginIndex=0&api_key=" . $apiKey);
+            $getSummonerMatches = file_get_contents($regionUrl . "/lol/match/v4/matchlists/by-account/" . $summonerInfo->accountId . "?endIndex=10&beginIndex=0&api_key=" . $apiKey);
             $summonerMatches = json_decode($getSummonerMatches);
 
             $matchesGET = [];
 
             foreach ($summonerMatches->matches as $match) {
-                $url = $region . "/lol/match/v4/matches/" . $match->gameId . "?api_key=" . $apiKey;
+                $url = $regionUrl . "/lol/match/v4/matches/" . $match->gameId . "?api_key=" . $apiKey;
                 array_push($matchesGET, $url);
             }
 
