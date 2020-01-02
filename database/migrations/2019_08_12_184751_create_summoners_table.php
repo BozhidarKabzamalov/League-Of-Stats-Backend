@@ -16,6 +16,9 @@ class CreateSummonersTable extends Migration
         Schema::create('summoners', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('summoner_name');
+            $table->string('puuid');
+            $table->string('encrypted_account_id');
+            $table->string('encrypted_summoner_id');
             $table->json('summoner_info');
             $table->json('summoner_league');
             $table->json('summoner_matches');
