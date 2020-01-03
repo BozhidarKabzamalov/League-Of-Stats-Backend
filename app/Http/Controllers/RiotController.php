@@ -10,7 +10,7 @@ class RiotController extends Controller
 {
     public function getSummoner($region, $summonerName){
 
-        $summoner = Summoner::where('summoner_name', $summonerName)->first();
+        $summoner = Summoner::where('summoner_name', $summonerName)->where('region', $region)->first();
 
         if ($summoner === null) {
             $apiKey = env("RIOT_API_KEY");
@@ -61,6 +61,10 @@ class RiotController extends Controller
 
             $summoner = new Summoner();
             $summoner->summoner_name = $summonerName;
+            $summoner->region = $region;
+            $summoner->puuid = $summonerInfo->puuid;
+            $summoner->encrypted_account_id = $summonerInfo->accountId;
+            $summoner->encrypted_summoner_id = $summonerInfo->id;
             $summoner->summoner_info = json_encode($summonerInfo);
             $summoner->summoner_league = json_encode($summonerLeague);
             $summoner->summoner_matches = json_encode($summonerMatches);

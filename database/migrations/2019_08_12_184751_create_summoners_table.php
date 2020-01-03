@@ -16,6 +16,7 @@ class CreateSummonersTable extends Migration
         Schema::create('summoners', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('summoner_name');
+            $table->string('region');
             $table->string('puuid');
             $table->string('encrypted_account_id');
             $table->string('encrypted_summoner_id');
